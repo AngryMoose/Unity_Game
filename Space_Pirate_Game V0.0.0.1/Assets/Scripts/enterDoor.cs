@@ -19,14 +19,7 @@ public class enterDoor : MonoBehaviour
         {
             nextLevelSound.Play();
             nextLevelEnabled = true;
-            nextLevel();
-            
+            SceneLoader.loadScene(nextLevelIndex);
         }
     }
-
-    private void nextLevel()
-    {
-        SceneManager.LoadScene(nextLevelIndex);
-    }
-
 }
