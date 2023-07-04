@@ -263,3 +263,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevelSound: {fileID: 0}
+  nextLevelIndex: 0

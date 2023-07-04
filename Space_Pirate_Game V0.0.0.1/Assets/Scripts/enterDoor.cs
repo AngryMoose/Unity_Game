@@ -4,28 +4,22 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NextLevel : MonoBehaviour
+public class enterDoor : MonoBehaviour
 {
     [SerializeField] private AudioSource nextLevelSound;
     [SerializeField] private int nextLevelIndex;
 
-    private bool nextLevelEnabled = false; 
+    private bool nextLevelEnabled = false;
 
-    // Start is called before the first frame update
-    private void Start()
-    {
-       
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hello 1");
+      
         if (collision.gameObject.name == "Player" && !nextLevelEnabled)
         {
-            Debug.Log(nextLevelIndex);
             nextLevelSound.Play();
             nextLevelEnabled = true;
-            Invoke("nextLevel", 0.5f); //wait 2 seconds
+            nextLevel();
             
         }
     }
