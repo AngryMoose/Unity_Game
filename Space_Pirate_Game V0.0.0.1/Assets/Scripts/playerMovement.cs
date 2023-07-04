@@ -17,6 +17,8 @@ public class playerMovement : MonoBehaviour
 
     private enum movementState {idle, running, jumping, falling } //UDT in Logix. each comma is refferenced in an INT
 
+    [SerializeField] private AudioSource jumpSoundEffect;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -34,6 +36,7 @@ public class playerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded()) //Only execute when space is pressed down
         {
+            jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x,jumpForce); //Get the ridged body component's velocity and apply a force vector of X,Y
         }
 
