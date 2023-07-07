@@ -12,6 +12,7 @@ public class playerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
 
+
     private float dirX = 0f;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
@@ -40,10 +41,12 @@ public class playerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded()) //Only execute when space is pressed down
         {
             jumpSoundEffect.Play();
-            rb.velocity = new Vector2(rb.velocity.x,jumpForce); //Get the ridged body component's velocity and apply a force vector of X,Y
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce); //Get the ridged body component's velocity and apply a force vector of X,Y
         }
 
+
         UpdateAnimationState();
+
 
     }
 

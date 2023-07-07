@@ -16,7 +16,6 @@ public class jumpPadLaunch : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("On Pad");
         anim.SetTrigger("startJumpPad");
     }
 
