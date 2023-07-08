@@ -1188,6 +1188,14 @@ PrefabInstance:
       propertyPath: spawnPosition.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4266776361337557055, guid: 3fc4804e0cfb1644caf81e29971107c8, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266776361337557055, guid: 3fc4804e0cfb1644caf81e29971107c8, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4403216611239896416, guid: 3fc4804e0cfb1644caf81e29971107c8, type: 3}
       propertyPath: m_Name
       value: NL_Parlor
