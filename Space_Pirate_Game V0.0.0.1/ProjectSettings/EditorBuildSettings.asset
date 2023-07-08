@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SB_Parlor.unity
     guid: 79071f2e3ca71224686ea83b15b0c3a6
+  - enabled: 1
+    path: Assets/Scenes/Parlor Games/ParlorGame_BlackJack.unity
+    guid: ab70ad69d17e67c44bb90a49408970f6
   m_configObjects: {}

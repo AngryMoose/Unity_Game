@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager instance;
-
     public int currency;
 
 
@@ -15,9 +14,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Submit"))
         {
-            Debug.Log("Yes you get here when you pressed E, you silly bitch");
             Globals.playerInteraction = true;
-            Debug.Log("Here's the current value, I'm sorry:" + Globals.playerInteraction);
         }
         if (Input.GetButtonUp("Submit"))
         {

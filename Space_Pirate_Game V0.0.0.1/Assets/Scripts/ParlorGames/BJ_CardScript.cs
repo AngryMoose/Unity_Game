@@ -28,7 +28,7 @@ public class BJ_cardScript : MonoBehaviour
 
     public void ResetCard()
     {
-        Sprite back = GameObject.Find("DeckController").GetComponent<BJ_deckScript>().GetCardBack();
+        Sprite back = GameObject.Find("Deck").GetComponent<BJ_deckScript>().GetCardBack();
         gameObject.GetComponent<SpriteRenderer>().sprite = back;
         value = 0;
     }

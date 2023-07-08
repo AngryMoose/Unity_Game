@@ -12,8 +12,6 @@ public class BJ_playerScript : MonoBehaviour
     // total value of hand
     public int handValue = 0;
 
-    //Betting Money
-    //private int money = PlayerManager.instance.currency;
     private int money = 1000;
 
     // array of card objects on table
@@ -43,9 +41,54 @@ public class BJ_playerScript : MonoBehaviour
             aceList.Add(hand[cardIndex].GetComponent<BJ_cardScript>());
 
         }
-        //AceCheck();
+        AceCheck();
         cardIndex++;
         return handValue;
 
+    }
+
+    // search for needed ace conversion, 1 to 11 or vice versa
+    public void AceCheck()
+    {
+        // for each ace in the list check
+        foreach(BJ_cardScript ace in aceList)
+        {
+            if(handValue + 10 < 22 && ace.GetValueOfCard() == 1)
+            {
+                //if converting ace, adjust card object value and hand
+                ace.SetValue(11);
+                handValue += 10;
+            }
+            else if(handValue > 21 && ace.GetValueOfCard() == 11)
+            {
+                ace.SetValue(1);
+                handValue -= 10;
+            }
+        }
+    }
+
+    // Add or subtract from money for bets
+    public void AdjustMoney(int amount)
+    {
+        money += amount;
+        PlayerManager.instance.currency = money;
+    }
+
+    // output players current money amount
+    public int GetMoney()
+    {
+        return money;
+    }
+
+    public void ResetHand()
+    {
+        for (int i = 0; i < hand.Length; i++)
+        {
+            hand[i].GetComponent<BJ_cardScript>().ResetCard();
+            hand[i].GetComponent<Renderer>().enabled = false;
+        }
+        cardIndex = 0;
+        handValue = 0;
+        aceList = new List<BJ_cardScript>();
     }
 }

@@ -33,7 +33,7 @@ public class BJ_deckScript : MonoBehaviour
             }
             cardValues[i] = num++;
         }
-        currentIndex = 1;
+        
     }
 
     public void Shuffle()
@@ -51,7 +51,7 @@ public class BJ_deckScript : MonoBehaviour
             cardValues[i] = cardValues[j];
             cardValues[j] = value;
         }
-        
+        currentIndex = 1;
     }
 
     public int DealCard(BJ_cardScript cardScript)

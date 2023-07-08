@@ -14,13 +14,12 @@ public class enterDoor : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("J chilling");
         if (collision.gameObject.name == "Player" && !nextLevelEnabled && Globals.playerInteraction)
             {
+                Debug.Log(nextLevelIndex);
                 nextLevelSound.Play();
                 nextLevelEnabled = true;
                 SceneLoader.loadScene(nextLevelIndex);
-                Debug.Log("You got here? How?! My lord, no one has traveled these lands in many years! By GOD, you look ravished, please please, sit and enjoy a nice warm meal");
                 Globals.playerInteraction = false;
             }
        
